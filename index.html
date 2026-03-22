@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Red Bull — Gives You Wings</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🐂</text></svg>"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chakra+Petch:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">
+    <span>R</span><span>E</span><span>D</span>&nbsp;<span>B</span><span>U</span><span>L</span><span>L</span>
+  </div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-count">0%</div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">RED<span>BULL</span></div>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#energy">Ingredients</a></li>
+    <li><a href="#world">Athletes</a></li>
+    <li><a href="#cta">Shop</a></li>
+  </ul>
+  <a href="#cta" class="nav-cta">Get Wings</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <!-- Decorative floating dots (CSS animated, not canvas) -->
+  <div class="hero-dots-wrap" id="heroDots"></div>
+  <div class="hero-vignette"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span>Energy Drink</span>
+      <div class="dot"></div>
+      <span>Est. 1987</span>
+      <div class="dot"></div>
+      <span>175+ Countries</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="h-line"><span class="h-word">GIVES</span></span>
+      <span class="h-line"><span class="h-word red">YOU</span></span>
+      <span class="h-line"><span class="h-word blue">WINGS.</span></span>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-desc">More than a drink — a way of life. Trusted by athletes, adventurers, and creators who refuse to settle for ordinary.</p>
+      <div class="hero-scroll-hint">
+        <div class="scroll-line"></div>
+        <p>Scroll</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating hero can -->
+  <div class="hero-can-wrap" id="heroCanWrap">
+    <svg class="hero-can-svg" viewBox="0 0 140 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="hcg" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#c0c8d8"/>
+          <stop offset="30%" stop-color="#f0f2f6"/>
+          <stop offset="60%" stop-color="#e8ebf0"/>
+          <stop offset="100%" stop-color="#b0b8cc"/>
+        </linearGradient>
+        <linearGradient id="htop" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#d8dde8"/>
+          <stop offset="100%" stop-color="#a8b0c0"/>
+        </linearGradient>
+        <clipPath id="hclip">
+          <rect x="10" y="24" width="120" height="252" rx="20" ry="20"/>
+        </clipPath>
+      </defs>
+      <!-- Can body -->
+      <rect x="10" y="24" width="120" height="252" rx="20" ry="20" fill="url(#hcg)"/>
+      <!-- Label area -->
+      <g clip-path="url(#hclip)">
+        <rect x="10" y="60" width="120" height="160" fill="#1a1a2e"/>
+        <!-- Red Bull brand stripe -->
+        <rect x="10" y="60" width="120" height="5" fill="#E8001D"/>
+        <rect x="10" y="215" width="120" height="5" fill="#1650D8"/>
+        <!-- Logo text -->
+        <text x="70" y="110" font-family="Arial Black,sans-serif" font-size="14" font-weight="900" fill="white" text-anchor="middle" letter-spacing="2">RED BULL</text>
+        <!-- Bull logo simplified -->
+        <circle cx="55" cy="148" r="18" fill="#E8001D" opacity="0.9"/>
+        <circle cx="85" cy="148" r="18" fill="#FFD700" opacity="0.9"/>
+        <!-- Sun in center -->
+        <circle cx="70" cy="148" r="10" fill="#FF6B00"/>
+        <!-- Horns -->
+        <path d="M45 132 Q40 122 48 118 Q52 128 55 132Z" fill="#FFD700"/>
+        <path d="M95 132 Q100 122 92 118 Q88 128 85 132Z" fill="#E8001D"/>
+        <!-- Energy text -->
+        <text x="70" y="190" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,0.6)" text-anchor="middle" letter-spacing="3">ENERGY DRINK</text>
+        <text x="70" y="204" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,0.4)" text-anchor="middle">250 ml</text>
+      </g>
+      <!-- Top rim -->
+      <ellipse cx="70" cy="26" rx="60" ry="10" fill="url(#htop)"/>
+      <!-- Tab -->
+      <rect x="60" y="14" width="20" height="14" rx="4" fill="#c8d0dc"/>
+      <rect x="63" y="17" width="14" height="3" rx="1.5" fill="#9aa0ae"/>
+      <!-- Bottom -->
+      <ellipse cx="70" cy="274" rx="60" ry="8" fill="url(#htop)"/>
+      <!-- Shine -->
+      <rect x="22" y="60" width="8" height="160" fill="rgba(255,255,255,0.25)" rx="4" clip-path="url(#hclip)"/>
+    </svg>
+  </div>
+
+  <div class="hero-deco">BULL</div>
+</section>
+
+<!-- MARQUEE 1 -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">GIVES YOU WINGS <span class="star">✦</span></span>
+    <span class="marquee-item">ENERGY <span class="star">✦</span></span>
+    <span class="marquee-item">FOCUS <span class="star">✦</span></span>
+    <span class="marquee-item">VITALITY <span class="star">✦</span></span>
+    <span class="marquee-item">PERFORMANCE <span class="star">✦</span></span>
+    <span class="marquee-item">GIVES YOU WINGS <span class="star">✦</span></span>
+    <span class="marquee-item">ENERGY <span class="star">✦</span></span>
+    <span class="marquee-item">FOCUS <span class="star">✦</span></span>
+    <span class="marquee-item">VITALITY <span class="star">✦</span></span>
+    <span class="marquee-item">PERFORMANCE <span class="star">✦</span></span>
+  </div>
+</div>
+
+<!-- MANIFESTO -->
+<section id="manifesto">
+  <div class="manifesto-sticky">
+    <div class="manifesto-grid">
+      <div class="manifesto-panel"><span class="m-text" data-active-class="blue-active">ENERGY</span></div>
+      <div class="manifesto-panel"><span class="m-text" data-active-class="active">FOCUS</span></div>
+      <div class="manifesto-panel"><span class="m-text" data-active-class="active">POWER</span></div>
+      <div class="manifesto-panel"><span class="m-text" data-active-class="red-active">WINGS.</span></div>
+    </div>
+    <p class="manifesto-label">scroll to discover</p>
+  </div>
+</section>
+
+<!-- MARQUEE 2 -->
+<div class="marquee-section">
+  <div class="marquee-track reverse">
+    <span class="marquee-item">RED BULL RACING <span class="star">✦</span></span>
+    <span class="marquee-item">MAX VERSTAPPEN <span class="star">✦</span></span>
+    <span class="marquee-item">RAMPAGE <span class="star">✦</span></span>
+    <span class="marquee-item">AIR RACE <span class="star">✦</span></span>
+    <span class="marquee-item">CLIFF DIVING <span class="star">✦</span></span>
+    <span class="marquee-item">RED BULL RACING <span class="star">✦</span></span>
+    <span class="marquee-item">MAX VERSTAPPEN <span class="star">✦</span></span>
+    <span class="marquee-item">RAMPAGE <span class="star">✦</span></span>
+    <span class="marquee-item">AIR RACE <span class="star">✦</span></span>
+    <span class="marquee-item">CLIFF DIVING <span class="star">✦</span></span>
+  </div>
+</div>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="stats-header">
+    <h2 class="sr-hidden">Numbers<br/>that speak.</h2>
+    <p class="sr-hidden-right">From a small Austrian startup to the world's most powerful energy drink brand — the numbers don't lie.</p>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-box">
+      <div class="stat-num" data-target="12.1" data-suffix="B" data-decimals="1"><span class="num">0</span></div>
+      <p class="stat-label">Cans sold<br/>in 2023</p>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num" data-target="175" data-suffix="+"><span class="num">0</span></div>
+      <p class="stat-label">Countries<br/>worldwide</p>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num" data-target="6" data-suffix="×"><span class="num">0</span></div>
+      <p class="stat-label">F1 World<br/>Titles</p>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num" data-target="1987" data-suffix=""><span class="num">0</span></div>
+      <p class="stat-label">Year Red Bull<br/>was founded</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="products-sticky">
+    <div class="products-header">
+      <h2 class="sr-hidden">Our Range</h2>
+      <span class="products-counter">05 Variants</span>
+    </div>
+    <div class="products-track" id="products-track">
+
+      <!-- Card 1: Original -->
+      <div class="product-card c1">
+        <div class="card-bg-gradient"></div>
+        <div class="product-can">
+          <svg viewBox="0 0 100 220" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="cg1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#a8b8d8"/><stop offset="35%" stop-color="#dce8ff"/><stop offset="65%" stop-color="#c8d8f0"/><stop offset="100%" stop-color="#8898b8"/>
+              </linearGradient>
+              <clipPath id="cc1"><rect x="6" y="16" width="88" height="188" rx="16"/></clipPath>
+            </defs>
+            <rect x="6" y="16" width="88" height="188" rx="16" fill="url(#cg1)"/>
+            <g clip-path="url(#cc1)">
+              <rect x="6" y="40" width="88" height="120" fill="#0a0a1e"/>
+              <rect x="6" y="40" width="88" height="4" fill="#E8001D"/>
+              <rect x="6" y="156" width="88" height="4" fill="#1650D8"/>
+              <text x="50" y="72" font-family="Arial Black" font-size="10" font-weight="900" fill="white" text-anchor="middle" letter-spacing="1">RED BULL</text>
+              <circle cx="38" cy="105" r="14" fill="#E8001D" opacity="0.9"/>
+              <circle cx="62" cy="105" r="14" fill="#FFD700" opacity="0.9"/>
+              <circle cx="50" cy="105" r="8" fill="#FF6B00"/>
+              <path d="M29 93 Q25 83 32 80 Q36 90 38 93Z" fill="#FFD700"/>
+              <path d="M71 93 Q75 83 68 80 Q64 90 62 93Z" fill="#E8001D"/>
+              <text x="50" y="138" font-family="Arial" font-size="6" fill="rgba(255,255,255,0.5)" text-anchor="middle" letter-spacing="2">ENERGY DRINK</text>
+              <text x="50" y="150" font-family="Arial" font-size="5" fill="rgba(255,255,255,0.3)" text-anchor="middle">250 ml</text>
+            </g>
+            <ellipse cx="50" cy="18" rx="44" ry="8" fill="#c0cce0"/>
+            <rect x="44" y="8" width="12" height="10" rx="3" fill="#b0bcd0"/>
+            <ellipse cx="50" cy="202" rx="44" ry="6" fill="#b0bcd0"/>
+            <rect x="18" y="40" width="5" height="120" fill="rgba(255,255,255,0.2)" rx="3" clip-path="url(#cc1)"/>
+          </svg>
+        </div>
+        <p class="product-type">Classic</p>
+        <h3 class="product-name">RED BULL<br/>ORIGINAL</h3>
+        <p class="product-desc">The one that started it all. Taurine, B-vitamins, caffeine — the original energy formula.</p>
+        <span class="product-tag">250ml · 355ml · 473ml</span>
+      </div>
+
+      <!-- Card 2: Zero / Sugar Free -->
+      <div class="product-card c2">
+        <div class="card-bg-gradient"></div>
+        <div class="product-can">
+          <svg viewBox="0 0 100 220" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="cg2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#d8a8a8"/><stop offset="35%" stop-color="#ffe0e0"/><stop offset="65%" stop-color="#f0c8c8"/><stop offset="100%" stop-color="#b88888"/>
+              </linearGradient>
+              <clipPath id="cc2"><rect x="6" y="16" width="88" height="188" rx="16"/></clipPath>
+            </defs>
+            <rect x="6" y="16" width="88" height="188" rx="16" fill="url(#cg2)"/>
+            <g clip-path="url(#cc2)">
+              <rect x="6" y="40" width="88" height="120" fill="#1a0505"/>
+              <rect x="6" y="40" width="88" height="4" fill="#E8001D"/>
+              <rect x="6" y="156" width="88" height="4" fill="#880000"/>
+              <text x="50" y="72" font-family="Arial Black" font-size="10" font-weight="900" fill="white" text-anchor="middle" letter-spacing="1">RED BULL</text>
+              <circle cx="38" cy="105" r="14" fill="#E8001D" opacity="0.9"/>
+              <circle cx="62" cy="105" r="14" fill="#ff9900" opacity="0.9"/>
+              <circle cx="50" cy="105" r="8" fill="#cc4400"/>
+              <path d="M29 93 Q25 83 32 80 Q36 90 38 93Z" fill="#ff9900"/>
+              <path d="M71 93 Q75 83 68 80 Q64 90 62 93Z" fill="#E8001D"/>
+              <text x="50" y="136" font-family="Arial" font-size="6" fill="rgba(255,255,255,0.5)" text-anchor="middle" letter-spacing="1">SUGAR FREE</text>
+              <text x="50" y="148" font-family="Arial" font-size="5" fill="rgba(255,255,255,0.3)" text-anchor="middle">250 ml</text>
+            </g>
+            <ellipse cx="50" cy="18" rx="44" ry="8" fill="#d0a0a0"/>
+            <rect x="44" y="8" width="12" height="10" rx="3" fill="#c09090"/>
+            <ellipse cx="50" cy="202" rx="44" ry="6" fill="#c09090"/>
+            <rect x="18" y="40" width="5" height="120" fill="rgba(255,255,255,0.2)" rx="3" clip-path="url(#cc2)"/>
+          </svg>
+        </div>
+        <p class="product-type">Sugar Free</p>
+        <h3 class="product-name">RED BULL<br/>ZERO</h3>
+        <p class="product-desc">All the wings, none of the sugar. Engineered for those who want performance without compromise.</p>
+        <span class="product-tag">250ml · 355ml</span>
+      </div>
+
+      <!-- Card 3: Tropical -->
+      <div class="product-card c3">
+        <div class="card-bg-gradient"></div>
+        <div class="product-can">
+          <svg viewBox="0 0 100 220" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="cg3" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#a8d8b8"/><stop offset="35%" stop-color="#d0ffe0"/><stop offset="65%" stop-color="#b8f0c8"/><stop offset="100%" stop-color="#88b898"/>
+              </linearGradient>
+              <clipPath id="cc3"><rect x="6" y="16" width="88" height="188" rx="16"/></clipPath>
+            </defs>
+            <rect x="6" y="16" width="88" height="188" rx="16" fill="url(#cg3)"/>
+            <g clip-path="url(#cc3)">
+              <rect x="6" y="40" width="88" height="120" fill="#051a0a"/>
+              <rect x="6" y="40" width="88" height="4" fill="#00cc44"/>
+              <rect x="6" y="156" width="88" height="4" fill="#00aa33"/>
+              <text x="50" y="72" font-family="Arial Black" font-size="10" font-weight="900" fill="white" text-anchor="middle" letter-spacing="1">RED BULL</text>
+              <circle cx="38" cy="105" r="14" fill="#00cc44" opacity="0.9"/>
+              <circle cx="62" cy="105" r="14" fill="#FFD700" opacity="0.9"/>
+              <circle cx="50" cy="105" r="8" fill="#ff8800"/>
+              <path d="M29 93 Q25 83 32 80 Q36 90 38 93Z" fill="#FFD700"/>
+              <path d="M71 93 Q75 83 68 80 Q64 90 62 93Z" fill="#00cc44"/>
+              <text x="50" y="135" font-family="Arial" font-size="5.5" fill="rgba(255,255,255,0.5)" text-anchor="middle" letter-spacing="1">TROPICAL STORM</text>
+              <text x="50" y="147" font-family="Arial" font-size="5" fill="rgba(255,255,255,0.3)" text-anchor="middle">LIMITED · 250 ml</text>
+            </g>
+            <ellipse cx="50" cy="18" rx="44" ry="8" fill="#a0d0b0"/>
+            <rect x="44" y="8" width="12" height="10" rx="3" fill="#90c0a0"/>
+            <ellipse cx="50" cy="202" rx="44" ry="6" fill="#90c0a0"/>
+            <rect x="18" y="40" width="5" height="120" fill="rgba(255,255,255,0.2)" rx="3" clip-path="url(#cc3)"/>
+          </svg>
+        </div>
+        <p class="product-type">Summer Edition</p>
+        <h3 class="product-name">TROPICAL<br/>STORM</h3>
+        <p class="product-desc">A burst of tropical mango and citrus. Limited summer flavour that hits like a wave.</p>
+        <span class="product-tag">Limited Edition · 250ml</span>
+      </div>
+
+      <!-- Card 4: Ember Spiced -->
+      <div class="product-card c4">
+        <div class="card-bg-gradient"></div>
+        <div class="product-can">
+          <svg viewBox="0 0 100 220" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="cg4" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#d8b888"/><stop offset="35%" stop-color="#ffe8c0"/><stop offset="65%" stop-color="#f0d0a0"/><stop offset="100%" stop-color="#b89060"/>
+              </linearGradient>
+              <clipPath id="cc4"><rect x="6" y="16" width="88" height="188" rx="16"/></clipPath>
+            </defs>
+            <rect x="6" y="16" width="88" height="188" rx="16" fill="url(#cg4)"/>
+            <g clip-path="url(#cc4)">
+              <rect x="6" y="40" width="88" height="120" fill="#1a0800"/>
+              <rect x="6" y="40" width="88" height="4" fill="#ff6600"/>
+              <rect x="6" y="156" width="88" height="4" fill="#cc3300"/>
+              <text x="50" y="72" font-family="Arial Black" font-size="10" font-weight="900" fill="white" text-anchor="middle" letter-spacing="1">RED BULL</text>
+              <circle cx="38" cy="105" r="14" fill="#ff6600" opacity="0.9"/>
+              <circle cx="62" cy="105" r="14" fill="#cc3300" opacity="0.9"/>
+              <circle cx="50" cy="105" r="8" fill="#ff9900"/>
+              <path d="M29 93 Q25 83 32 80 Q36 90 38 93Z" fill="#ff9900"/>
+              <path d="M71 93 Q75 83 68 80 Q64 90 62 93Z" fill="#ff6600"/>
+              <text x="50" y="135" font-family="Arial" font-size="5.5" fill="rgba(255,255,255,0.5)" text-anchor="middle" letter-spacing="1">EMBER SPICED</text>
+              <text x="50" y="147" font-family="Arial" font-size="5" fill="rgba(255,255,255,0.3)" text-anchor="middle">LIMITED · 250 ml</text>
+            </g>
+            <ellipse cx="50" cy="18" rx="44" ry="8" fill="#c0a070"/>
+            <rect x="44" y="8" width="12" height="10" rx="3" fill="#b09060"/>
+            <ellipse cx="50" cy="202" rx="44" ry="6" fill="#b09060"/>
+            <rect x="18" y="40" width="5" height="120" fill="rgba(255,255,255,0.2)" rx="3" clip-path="url(#cc4)"/>
+          </svg>
+        </div>
+        <p class="product-type">Winter Edition</p>
+        <h3 class="product-name">EMBER<br/>SPICED</h3>
+        <p class="product-desc">Warm plum and cinnamon. A limited winter edition crafted for cold nights and big goals.</p>
+        <span class="product-tag">Limited Edition · 250ml</span>
+      </div>
+
+      <!-- Card 5: Organics -->
+      <div class="product-card c5">
+        <div class="card-bg-gradient"></div>
+        <div class="product-can">
+          <svg viewBox="0 0 100 220" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="cg5" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#c8b8d8"/><stop offset="35%" stop-color="#ede0ff"/><stop offset="65%" stop-color="#ddd0f0"/><stop offset="100%" stop-color="#9880b0"/>
+              </linearGradient>
+              <clipPath id="cc5"><rect x="6" y="16" width="88" height="188" rx="16"/></clipPath>
+            </defs>
+            <rect x="6" y="16" width="88" height="188" rx="16" fill="url(#cg5)"/>
+            <g clip-path="url(#cc5)">
+              <rect x="6" y="40" width="88" height="120" fill="#0d0520"/>
+              <rect x="6" y="40" width="88" height="4" fill="#9944cc"/>
+              <rect x="6" y="156" width="88" height="4" fill="#6600aa"/>
+              <text x="50" y="68" font-family="Arial Black" font-size="9" font-weight="900" fill="white" text-anchor="middle" letter-spacing="1">RED BULL</text>
+              <circle cx="38" cy="105" r="14" fill="#9944cc" opacity="0.9"/>
+              <circle cx="62" cy="105" r="14" fill="#00ccaa" opacity="0.9"/>
+              <circle cx="50" cy="105" r="8" fill="#5500aa"/>
+              <path d="M29 93 Q25 83 32 80 Q36 90 38 93Z" fill="#00ccaa"/>
+              <path d="M71 93 Q75 83 68 80 Q64 90 62 93Z" fill="#9944cc"/>
+              <text x="50" y="133" font-family="Arial" font-size="5" fill="rgba(255,255,255,0.5)" text-anchor="middle" letter-spacing="1">ORGANICS</text>
+              <text x="50" y="144" font-family="Arial" font-size="4.5" fill="rgba(255,255,255,0.5)" text-anchor="middle" letter-spacing="1">PURE ORIGINS</text>
+              <text x="50" y="155" font-family="Arial" font-size="4.5" fill="rgba(255,255,255,0.3)" text-anchor="middle">ORGANIC · 250 ml</text>
+            </g>
+            <ellipse cx="50" cy="18" rx="44" ry="8" fill="#b0a0cc"/>
+            <rect x="44" y="8" width="12" height="10" rx="3" fill="#a090bc"/>
+            <ellipse cx="50" cy="202" rx="44" ry="6" fill="#a090bc"/>
+            <rect x="18" y="40" width="5" height="120" fill="rgba(255,255,255,0.2)" rx="3" clip-path="url(#cc5)"/>
+          </svg>
+        </div>
+        <p class="product-type">Organics by Red Bull</p>
+        <h3 class="product-name">PURE<br/>ORIGINS</h3>
+        <p class="product-desc">Organic alpine spring water, natural ingredients, no artificial colours or flavours.</p>
+        <span class="product-tag">Organic · 250ml</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ENERGY / INGREDIENTS -->
+<section id="energy">
+  <div class="energy-inner">
+    <div class="energy-left">
+      <span class="tag sr-hidden">What's inside</span>
+      <h2 class="sr-hidden-left">The Science<br/>of Wings.</h2>
+      <p class="sr-hidden">Every ingredient in Red Bull is precisely chosen and clinically studied. This isn't just a drink — it's a precision-engineered energy system, bottled.</p>
+    </div>
+    <div class="energy-right">
+      <div class="ingredient sr-hidden-scale">
+        <span class="ing-icon">⚡</span>
+        <h4 class="ing-name">Caffeine</h4>
+        <p class="ing-desc">80mg per can. Improves concentration, reaction speed, and endurance. Same as a cup of coffee.</p>
+      </div>
+      <div class="ingredient sr-hidden-scale" style="--delay: 0.1s">
+        <span class="ing-icon">💊</span>
+        <h4 class="ing-name">Taurine</h4>
+        <p class="ing-desc">1000mg. An amino acid that supports neurological development and cardiovascular function.</p>
+      </div>
+      <div class="ingredient sr-hidden-scale" style="--delay: 0.2s">
+        <span class="ing-icon">🧬</span>
+        <h4 class="ing-name">B-Vitamins</h4>
+        <p class="ing-desc">B3, B5, B6, B12. Essential for energy metabolism and reducing fatigue at the cellular level.</p>
+      </div>
+      <div class="ingredient sr-hidden-scale" style="--delay: 0.3s">
+        <span class="ing-icon">🍬</span>
+        <h4 class="ing-name">Sugars</h4>
+        <p class="ing-desc">27g per can (or zero in Sugar-Free). Rapid fuel source for peak physical and mental output.</p>
+      </div>
+    </div>
+  </div>
+  <div class="energy-bg-text">ENERGY</div>
+</section>
+
+<!-- WORLD / ATHLETES -->
+<section id="world">
+  <div class="world-sticky">
+    <div class="world-lines">
+      <div class="w-line" style="transform: rotate(0deg)"></div>
+      <div class="w-line" style="transform: rotate(30deg)"></div>
+      <div class="w-line" style="transform: rotate(60deg)"></div>
+      <div class="w-line" style="transform: rotate(90deg)"></div>
+      <div class="w-line" style="transform: rotate(120deg)"></div>
+      <div class="w-line" style="transform: rotate(150deg)"></div>
+    </div>
+    <span class="world-tag">Red Bull Athletes</span>
+    <h2 class="world-title">
+      <span class="wt-line"><span class="wt-word">WE BACK</span></span>
+      <span class="wt-line"><span class="wt-word red">THE BOLD.</span></span>
+      <span class="wt-line"><span class="wt-word">THE FEARLESS.</span></span>
+    </h2>
+    <p class="world-sub">From F1 champions to big wave surfers, from street skaters to freeride legends — Red Bull backs athletes who push the edge of what's possible.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-glow"></div>
+  <div class="cta-inner">
+    <span class="cta-tag">Ready to fly?</span>
+    <h2 class="cta-title">GET YOUR<br/><span class="blue">WINGS.</span></h2>
+    <a href="#" class="cta-btn"><span>Shop Now</span><span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="f-logo">RED<span>BULL</span></div>
+      <p>Red Bull Gives You Wings. Powering minds and bodies since 1987 across 175+ countries worldwide.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="#">Original</a></li><li><a href="#">Sugar Free</a></li>
+        <li><a href="#">Zero</a></li><li><a href="#">Editions</a></li><li><a href="#">Organics</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">Our Story</a></li><li><a href="#">Athletes</a></li>
+        <li><a href="#">Events</a></li><li><a href="#">Media</a></li><li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li><li><a href="#">X / Twitter</a></li>
+        <li><a href="#">YouTube</a></li><li><a href="#">TikTok</a></li><li><a href="#">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Red Bull GmbH. All rights reserved.</span>
+    <span>Privacy Policy · Terms · Cookies</span>
+    <span>⚡ Built for speed</span>
+  </div>
+</footer>
+
+<script type="module">
+  import Lenis from 'https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.mjs';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Lenis smooth scroll
+  const lenis = new Lenis({ duration: 1.4, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(time => lenis.raf(time * 1000));
+  gsap.ticker.lagSmoothing(0);
+
+  // Progress bar
+  const progressBar = document.getElementById('progress-bar');
+  lenis.on('scroll', ({ progress }) => gsap.set(progressBar, { scaleX: progress }));
+
+  // ===== LOADER =====
+  const loaderLogo  = document.querySelectorAll('.loader-logo span');
+  const loaderBar   = document.querySelector('.loader-bar');
+  const loaderCount = document.querySelector('.loader-count');
+  const loader      = document.getElementById('loader');
+
+  gsap.to(loaderLogo, { y: '0%', stagger: 0.07, duration: 0.9, ease: 'power4.out', delay: 0.1 });
+
+  let prog = 0;
+  const iv = setInterval(() => {
+    prog += Math.random() * 9 + 1;
+    if (prog >= 100) {
+      prog = 100; clearInterval(iv);
+      const out = gsap.timeline();
+      out.to(loaderCount, { opacity: 0, duration: 0.3 })
+         .to(loaderBar, { opacity: 0, duration: 0.3 }, '<')
+         .to(loaderLogo, { y: '-110%', stagger: 0.05, duration: 0.7, ease: 'power4.in' }, 0.2)
+         .to(loader, { scaleY: 0, transformOrigin: 'top', duration: 0.8, ease: 'power4.inOut' }, 0.5)
+         .call(() => { loader.style.display = 'none'; initPage(); });
+    }
+    loaderBar.style.width = prog + '%';
+    loaderCount.textContent = Math.floor(prog) + '%';
+  }, 50);
+
+  // ===== CSS Floating dots (no canvas needed) =====
+  function initDots() {
+    const wrap = document.getElementById('heroDots');
+    for (let i = 0; i < 30; i++) {
+      const d = document.createElement('div');
+      d.className = 'hero-dot';
+      d.style.cssText = `
+        left:${Math.random()*100}%;
+        top:${Math.random()*100}%;
+        width:${Math.random()*4+2}px;
+        height:${Math.random()*4+2}px;
+        animation-delay:${Math.random()*6}s;
+        animation-duration:${4+Math.random()*4}s;
+        opacity:${0.1+Math.random()*0.3};
+        background:${Math.random()>0.5?'#1650D8':'#E8001D'};
+      `;
+      wrap.appendChild(d);
+    }
+  }
+
+  function initPage() {
+    initDots();
+
+    // Hero entrance
+    const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+    tl.to('.hero-eyebrow span, .hero-eyebrow .dot', { y: '0%', stagger: 0.06, duration: 1 }, 0)
+      .to('.h-word', { y: '0%', stagger: 0.1, duration: 1.2 }, 0.15)
+      .to('.hero-desc', { opacity: 1, y: 0, duration: 1 }, 0.7)
+      .to('.hero-scroll-hint', { opacity: 1, y: 0, duration: 1 }, 0.9)
+      .fromTo('#heroCanWrap',
+        { opacity: 0, x: 80, rotation: 10 },
+        { opacity: 1, x: 0, rotation: 0, duration: 1.4, ease: 'power3.out' }, 0.3);
+  }
+
+  // ===== CURSOR =====
+  const cursor = document.getElementById('cursor');
+  const ring   = document.getElementById('cursor-ring');
+  let mx=0, my=0, rx=0, ry=0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    gsap.set(cursor, { x: mx, y: my });
+  });
+  gsap.ticker.add(() => {
+    rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+    gsap.set(ring, { x: rx, y: ry });
+  });
+  document.querySelectorAll('a, button, .product-card, .stat-box').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      gsap.to(cursor, { width: 5, height: 5, duration: 0.3 });
+      gsap.to(ring, { width: 72, height: 72, duration: 0.4 });
+    });
+    el.addEventListener('mouseleave', () => {
+      gsap.to(cursor, { width: 10, height: 10, duration: 0.3 });
+      gsap.to(ring, { width: 44, height: 44, duration: 0.4 });
+    });
+  });
+
+  // ===== NAV scroll =====
+  ScrollTrigger.create({
+    start: 80,
+    onUpdate: self => document.getElementById('nav').classList.toggle('scrolled', self.progress > 0)
+  });
+
+  // ===== MANIFESTO =====
+  const mTexts = document.querySelectorAll('.m-text');
+  ScrollTrigger.create({
+    trigger: '#manifesto', start: 'top top', end: 'bottom bottom', scrub: 1,
+    onUpdate: self => {
+      const p = self.progress, n = mTexts.length;
+      mTexts.forEach((el, i) => {
+        const active = p >= i/n && p <= (i+1)/n + 0.05;
+        const cls = el.dataset.activeClass || 'active';
+        el.classList.toggle(cls, active);
+      });
+    }
+  });
+
+  // ===== STATS COUNTER =====
+  document.querySelectorAll('.stat-num[data-target]').forEach(el => {
+    const target = parseFloat(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    const dec    = parseInt(el.dataset.decimals || 0);
+    ScrollTrigger.create({
+      trigger: el, start: 'top 80%', once: true,
+      onEnter: () => {
+        gsap.fromTo({ v: 0 }, { v: target }, {
+          duration: 2.2, ease: 'power2.out',
+          onUpdate: function() {
+            const v = this.targets()[0].v;
+            el.querySelector('.num').textContent = (dec ? v.toFixed(dec) : Math.floor(v)) + suffix;
+          }
+        });
+      }
+    });
+  });
+
+  // ===== HORIZONTAL SCROLL =====
+  const track = document.getElementById('products-track');
+  if (track) {
+    const cards = track.querySelectorAll('.product-card');
+    const totalW = (380 + 24) * (cards.length - 1);
+    gsap.to(track, {
+      x: -totalW, ease: 'none',
+      scrollTrigger: { trigger: '#products', start: 'top top', end: 'bottom bottom', scrub: 1.5 }
+    });
+  }
+
+  // ===== WORLD SECTION =====
+  ScrollTrigger.create({
+    trigger: '#world', start: 'top 60%', once: true,
+    onEnter: () => {
+      gsap.to('.world-tag', { opacity: 0.7, duration: 0.6 });
+      gsap.to('.wt-word', { y: '0%', stagger: 0.1, duration: 1.2, ease: 'power4.out', delay: 0.1 });
+      gsap.to('.world-sub', { opacity: 0.6, y: 0, duration: 1, delay: 0.7 });
+    }
+  });
+  gsap.to('.w-line', {
+    rotation: 'random(-25, 25)', stagger: 0.15,
+    scrollTrigger: { trigger: '#world', start: 'top bottom', end: 'bottom top', scrub: 2 }
+  });
+
+  // ===== GENERAL REVEALS =====
+  gsap.utils.toArray('.sr-hidden').forEach(el => {
+    gsap.to(el, { opacity:1, y:0, duration:1.1, ease:'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 83%', toggleActions: 'play none none reverse' }
+    });
+  });
+  gsap.utils.toArray('.sr-hidden-left').forEach(el => {
+    gsap.to(el, { opacity:1, x:0, duration:1.2, ease:'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 83%', toggleActions: 'play none none reverse' }
+    });
+  });
+  gsap.utils.toArray('.sr-hidden-right').forEach(el => {
+    gsap.to(el, { opacity:1, x:0, duration:1.2, ease:'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 83%', toggleActions: 'play none none reverse' }
+    });
+  });
+  gsap.utils.toArray('.sr-hidden-scale').forEach(el => {
+    gsap.to(el, { opacity:1, scale:1, duration:0.9, ease:'back.out(1.4)',
+      scrollTrigger: { trigger: el, start: 'top 83%', toggleActions: 'play none none reverse' }
+    });
+  });
+
+  // ===== ENERGY BG PARALLAX =====
+  gsap.to('.energy-bg-text', {
+    x: -160,
+    scrollTrigger: { trigger: '#energy', start: 'top bottom', end: 'bottom top', scrub: 2 }
+  });
+
+  // ===== PRODUCT CARD 3D TILT =====
+  document.querySelectorAll('.product-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top)  / r.height - 0.5;
+      gsap.to(card, { rotationY: x*14, rotationX: -y*14, transformPerspective: 900, duration: 0.4, ease: 'power2.out' });
+    });
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card, { rotationX:0, rotationY:0, duration: 0.7, ease: 'elastic.out(1, 0.6)' });
+    });
+  });
+
+  // Staggered sections
+  gsap.from('.stat-box', {
+    y:60, opacity:0, stagger:0.1, duration:1, ease:'power3.out',
+    scrollTrigger: { trigger:'#stats', start:'top 68%', toggleActions:'play none none reverse' }
+  });
+  gsap.from('.ingredient', {
+    y:50, opacity:0, stagger:0.12, duration:0.9, ease:'power3.out',
+    scrollTrigger: { trigger:'#energy', start:'top 65%', toggleActions:'play none none reverse' }
+  });
+
+  // CTA
+  gsap.timeline({ scrollTrigger: { trigger:'#cta', start:'top 70%', toggleActions:'play none none reverse' }})
+    .from('.cta-tag',   { opacity:0, y:20, duration:0.6 })
+    .from('.cta-title', { opacity:0, y:40, duration:0.9, ease:'power3.out' }, 0.15)
+    .from('.cta-btn',   { opacity:0, y:20, duration:0.6 }, 0.45);
+
+  // Footer
+  gsap.from('.footer-grid > *', {
+    y:40, opacity:0, stagger:0.1, duration:0.8, ease:'power3.out',
+    scrollTrigger: { trigger:'footer', start:'top 85%' }
+  });
+</script>
+</body>
+</html>
